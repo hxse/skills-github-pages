@@ -1,5 +1,4 @@
 // assets/js/post.js
-let codeBlocks = document.querySelectorAll('pre.highlight');
 
 function fix_lines(codeBlock) {
     let lines = codeBlock.parentElement.querySelector("pre.lines")
@@ -11,7 +10,24 @@ function fix_lines(codeBlock) {
 
 }
 
+function check_lines(codeBlocks) {
+    for (let codeBlock of codeBlocks) {
+        let lines = codeBlock.parentElement.querySelector("pre.lines")
+        if (!lines) {
+            return false
+        }
+    }
+    return true
+}
+
 function add_click() {
+    let codeBlocks = document.querySelectorAll('pre.highlight');
+
+    const isLines = check_lines(codeBlocks)
+    if (!isLines) return
+
+    clearInterval(myInterval);
+
     codeBlocks.forEach(function (codeBlock) {
         let copyButton = document.createElement('button');
         copyButton.className = 'copy';
@@ -21,7 +37,7 @@ function add_click() {
 
         codeBlock.append(copyButton);
 
-        fix_lines(codeBlock)
+        // fix_lines(codeBlock)
 
         copyButton.addEventListener('click', function () {
             let code = codeBlock.querySelector('code').innerText.trim();
@@ -37,7 +53,5 @@ function add_click() {
     });
 
 }
+const myInterval = setInterval(add_click, 200);
 
-setTimeout(() => {
-    add_click()
-}, 1000);
