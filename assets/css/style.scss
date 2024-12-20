@@ -2,14 +2,14 @@
 ---
 @import "{{ site.theme }}";
 
-code.language-plaintext.highlighter-rouge {
-    padding: .2em .4em!important;
-    margin: 0!important;
-    font-size: 85%;
-    white-space: break-spaces!important;
-    background-color: #F0F1F2;//var(--bgColor-neutral-muted, var(--color-neutral-muted))!important;
-    border-radius: 6px!important;
-}
+// code.language-plaintext.highlighter-rouge {
+//     padding: .2em .4em!important;
+//     margin: 0!important;
+//     font-size: 85%;
+//     white-space: break-spaces!important;
+//     background-color: #F0F1F2;//var(--bgColor-neutral-muted, var(--color-neutral-muted))!important;
+//     border-radius: 6px!important;
+// }
 
 /* copy code */
 pre.highlight > button {
