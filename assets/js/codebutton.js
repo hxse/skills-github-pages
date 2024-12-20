@@ -11,28 +11,33 @@ function fix_lines(codeBlock) {
 
 }
 
-codeBlocks.forEach(function (codeBlock) {
-    let copyButton = document.createElement('button');
-    copyButton.className = 'copy';
-    copyButton.type = 'button';
-    copyButton.ariaLabel = 'Copy code to clipboard';
-    copyButton.innerText = 'Copy';
+function add_click() {
+    codeBlocks.forEach(function (codeBlock) {
+        let copyButton = document.createElement('button');
+        copyButton.className = 'copy';
+        copyButton.type = 'button';
+        copyButton.ariaLabel = 'Copy code to clipboard';
+        copyButton.innerText = 'Copy';
 
-    codeBlock.append(copyButton);
+        codeBlock.append(copyButton);
 
-    setTimeout(() => {
         fix_lines(codeBlock)
-    }, 2000);
 
-    copyButton.addEventListener('click', function () {
-        let code = codeBlock.querySelector('code').innerText.trim();
-        window.navigator.clipboard.writeText(code);
+        copyButton.addEventListener('click', function () {
+            let code = codeBlock.querySelector('code').innerText.trim();
+            window.navigator.clipboard.writeText(code);
 
-        copyButton.innerText = 'Copied';
-        let fourSeconds = 4000;
+            copyButton.innerText = 'Copied';
+            let fourSeconds = 4000;
 
-        setTimeout(function () {
-            copyButton.innerText = 'Copy';
-        }, fourSeconds);
+            setTimeout(function () {
+                copyButton.innerText = 'Copy';
+            }, fourSeconds);
+        });
     });
-});
+
+}
+
+setTimeout(() => {
+    add_click()
+}, 1000);
