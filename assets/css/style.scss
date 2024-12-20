@@ -3,10 +3,10 @@
 @import "{{ site.theme }}";
 
 code {
-    padding: .2em .4em;
-    margin: 0;
-    // font-size: 85%;
-    white-space: break-spaces;
-    background-color: var(--bgColor-neutral-muted, var(--color-neutral-muted));
-    border-radius: 6px;
+    padding: .2em .4em!important;
+    margin: 0!important;
+
+    white-space: break-spaces!important;
+    background-color: var(--bgColor-neutral-muted, var(--color-neutral-muted))!important;
+    border-radius: 6px!important;
 }
