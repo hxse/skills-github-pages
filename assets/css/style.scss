@@ -1,6 +1,12 @@
 ---
 ---
 @import "{{ site.theme }}";
+
 code {
-    background-color: grey !important;
+    padding: .2em .4em;
+    margin: 0;
+    // font-size: 85%;
+    white-space: break-spaces;
+    background-color: var(--bgColor-neutral-muted, var(--color-neutral-muted));
+    border-radius: 6px;
 }
