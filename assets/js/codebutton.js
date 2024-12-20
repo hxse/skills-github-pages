@@ -3,6 +3,7 @@ let codeBlocks = document.querySelectorAll('pre.highlight');
 
 function fix_lines(codeBlock) {
     let lines = codeBlock.parentElement.querySelector("pre.lines")
+    console.log(lines)
     let lines_array = lines.textContent.trim().split("\n")
     if (lines.offsetHeight != codeBlock.offsetHeight) {
         lines.innerText = lines_array.slice(0, lines_array.length - 1).join("\n")
@@ -19,7 +20,9 @@ codeBlocks.forEach(function (codeBlock) {
 
     codeBlock.append(copyButton);
 
-    fix_lines(codeBlock)
+    setTimeout(() => {
+        fix_lines(codeBlock)
+    }, 2000);
 
     copyButton.addEventListener('click', function () {
         let code = codeBlock.querySelector('code').innerText.trim();
