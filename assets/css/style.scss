@@ -14,12 +14,12 @@ code.language-plaintext.highlighter-rouge {
 /* copy code */
 pre.highlight {
     .copy {
-        color: $text-color;
+        color: grey;
         position: absolute;
         right: 1rem;
         top: 1rem;
         opacity: 20%;
-        background:  $primary-color;
+        background:  black;
     }
 
     &:active .copy,
