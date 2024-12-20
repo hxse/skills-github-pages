@@ -8,7 +8,7 @@ codeBlocks.forEach(function (codeBlock) {
     copyButton.ariaLabel = 'Copy code to clipboard';
     copyButton.innerText = 'Copy';
 
-    codeBlock.parentElement.append(copyButton);
+    codeBlock.append(copyButton);
 
     copyButton.addEventListener('click', function () {
         var code = codeBlock.querySelector('code').innerText.trim();
