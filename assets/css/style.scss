@@ -11,16 +11,20 @@ code.language-plaintext.highlighter-rouge {
     border-radius: 6px!important;
 }
 
-/* _sass/_post.css */
-pre.highlight > button {
-  opacity: 0;
-}
+/* copy code */
+pre.highlight {
+    .copy {
+        color: $text-color;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        opacity: 20%;
+        background:  $primary-color;
+    }
 
-pre.highlight:hover > button {
-  opacity: 1;
-}
-
-pre.highlight > button:active,
-pre.highlight > button:focus {
-  opacity: 1;
+    &:active .copy,
+    &:focus .copy,
+    &:hover .copy {
+      opacity: 1;
+    }
 }
