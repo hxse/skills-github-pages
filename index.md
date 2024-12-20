@@ -1,7 +1,10 @@
 ---
-title: Welcome to my blog test
+title: Welcome to my blog
 ---
 
+[about page](/blog/about.html)
+[about page]({{ site.baseurl }}/about.html)
+[about page]({{ 'about.html' | relative_url }})
 <ul>
   {% for post in site.posts %}
     <li>
