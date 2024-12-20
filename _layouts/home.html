@@ -3,8 +3,10 @@ layout: default
 ---
 
 <div>
-    <script src="{{ site.baseurl }}/assets/js/codebutton.js">
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/codebutton.js">
     </script>
-    test
+    <script type="text/javascript">
+        document.querySelector("h1").textContent = 234
+    </script>
     {{ content }}
 </div>
