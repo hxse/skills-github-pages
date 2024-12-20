@@ -9,3 +9,17 @@ code.language-plaintext.highlighter-rouge {
     background-color: #F0F1F2;//var(--bgColor-neutral-muted, var(--color-neutral-muted))!important;
     border-radius: 6px!important;
 }
+
+/* _sass/_post.css */
+pre.highlight > button {
+  opacity: 0;
+}
+
+pre.highlight:hover > button {
+  opacity: 1;
+}
+
+pre.highlight > button:active,
+pre.highlight > button:focus {
+  opacity: 1;
+}
