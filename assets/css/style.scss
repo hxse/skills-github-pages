@@ -26,9 +26,10 @@ pre.highlight > button:focus {
   opacity: 1;
 }
 
-div.language-plaintext.highlighter-rouge {
+div.language-plaintext.highlighter-rouge div.highlight {
   position: relative;
 }
+
 pre.highlight > button {
   background-color: rgba(grey, 0.9);
   color: rgba(white, 0.9);
