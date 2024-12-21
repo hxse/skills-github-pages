@@ -20,14 +20,7 @@ function check_lines(codeBlocks) {
     return true
 }
 
-function add_click() {
-    let codeBlocks = document.querySelectorAll('pre.highlight');
-
-    const isLines = check_lines(codeBlocks)
-    if (!isLines) return
-
-    clearInterval(myInterval);
-
+function add_click(codeBlocks) {
     codeBlocks.forEach(function (codeBlock) {
         let copyButton = document.createElement('button');
         copyButton.className = 'copy';
@@ -51,7 +44,22 @@ function add_click() {
             }, fourSeconds);
         });
     });
-
 }
-const myInterval = setInterval(add_click, 200);
 
+function run_interval() {
+    let codeBlocks = document.querySelectorAll('pre.highlight');
+
+    const isLines = check_lines(codeBlocks)
+    if (!isLines) return
+
+    clearInterval(myInterval);
+
+    add_click(codeBlocks)
+}
+// const myInterval = setInterval(run_interval, 200);
+
+
+setTimeout(() => {
+    let codeBlocks = document.querySelectorAll('pre.highlight');
+    add_click(codeBlocks)
+}, 2);
